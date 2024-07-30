@@ -24,9 +24,7 @@ const boxModels = [
     { id: 'tendaBox', label: 'Caixas Tenda' },
     { id: 'tremBox', label: 'Caixas Trem' },
     { id: 'vagaoBox', label: 'Caixas Vagão' },
-    { id: 'visorBox', label: 'Caixas Visor' }
-
-    
+    { id: 'visorBox', label: 'Caixas Visor' },
 ];
 
 
