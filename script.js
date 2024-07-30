@@ -145,5 +145,6 @@ document.getElementById('downloadPDF').addEventListener('click', function() {
 
     // Salvar PDF com nome personalizado
     const sanitizedClientName = clientName.replace(/[^a-zA-Z0-9]/g, '_'); // Sanitizar nome para evitar caracteres inválidos
-    doc.save(`${sanitizedClientName}_checklist.pdf`);
+    const sanitizedDeliveryDate = deliveryDate.replace(/[^a-zA-Z0-9]/g, '_'); // Sanitizar data para evitar caracteres inválidos
+    doc.save(`${sanitizedClientName}_${sanitizedDeliveryDate}_checklist.pdf`);
 });
