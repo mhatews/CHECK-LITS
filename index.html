@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist de Pedido</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Checklist de Pedido</h1>
+        <form id="checklistForm">
+            <label for="clientName">Nome da Cliente:</label>
+            <input type="text" id="clientName" name="clientName" required>
+
+            <label for="childName">Nome da Criança:</label>
+            <input type="text" id="childName" name="childName" required>
+
+            <label for="deliveryDate">Data de Envio:</label>
+            <input type="date" id="deliveryDate" name="deliveryDate" required>
+
+            <label for="theme">Tema:</label>
+            <input type="text" id="theme" name="theme" required>
+
+            <label for="accountType">Tipo de Conta:</label>
+            <select id="accountType" name="accountType" required>
+                <option value="CP">Conta Principal</option>
+                <option value="CN">Conta Nova</option>
+                <option value="ML">Mercado Livre</option>
+                <option value="outros">Outros</option>
+            </select>
+
+            <div id="boxModelSelector">
+                <label for="boxModel">Modelo de Caixinha:</label>
+                <select id="boxModel">
+                    <!-- Opções serão geradas dinamicamente -->
+                </select>
+                <label for="boxQuantity">Quantidade:</label>
+                <input type="number" id="boxQuantity" name="boxQuantity" min="0" value="0">
+                <button type="button" id="addBoxModel">Adicionar Modelo</button>
+            </div>
+
+            <div id="selectedBoxModels">
+                <h3>Modelos Selecionados:</h3>
+                <!-- Modelos selecionados aparecerão aqui -->
+            </div>
+
+            <button type="submit">Gerar Checklist</button>
+            <button type="button" id="downloadPDF">Salvar como PDF</button>
+        </form>
+        <div id="output"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
