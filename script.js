@@ -105,41 +105,51 @@ document.getElementById('downloadPDF').addEventListener('click', function() {
     const theme = document.getElementById('theme').value;
     const accountType = document.getElementById('accountType').value;
 
-    // Definir metadados
-    doc.setProperties({
-        title: 'Checklist de Pedido - ' + clientName,
-        subject: 'Checklist de Pedido',
-        author: 'Sua Loja',
-        keywords: 'checklist, pedido, aniversário',
-        creator: 'Seu Nome ou Empresa'
-    });
+    // Adicionar cabeçalho com informações da empresa e logo
+    doc.addImage('logo.png', 'PNG', 10, 10, 30, 30); // Supondo que a logo seja um arquivo 'logo.png' na mesma pasta
+    doc.setFontSize(16);
+    doc.text('Studio Cantinho da Nana', 50, 20);
+    doc.setFontSize(12);
+    doc.text('Rua Aristides Alves de Oliveira, 94', 50, 30);
+    doc.text('São Pedro da União MG 37855 - 000', 50, 35);
+    doc.text('WHATS: (35) 99903 - 2302', 50, 40);
+
+    // Adicionar linha para separar cabeçalho do conteúdo
+    doc.setDrawColor(200, 0, 0);
+    doc.line(10, 50, 200, 50);
 
     // Adicionar título
     doc.setFontSize(22);
     doc.setTextColor(40, 55, 71);
-    doc.text('Checklist de Pedido', 10, 20);
+    doc.text('Checklist de Pedido', 10, 60);
 
     // Adicionar informações do pedido
     doc.setFontSize(16);
     doc.setTextColor(0, 0, 0);
-    doc.text(`Nome da Cliente: ${clientName}`, 10, 30);
-    doc.text(`Nome da Criança: ${childName}`, 10, 40);
-    doc.text(`Data de Envio: ${deliveryDate}`, 10, 50);
-    doc.text(`Tema: ${theme}`, 10, 60);
-    doc.text(`Tipo de Conta: ${accountType}`, 10, 70);
+    doc.text(`Nome da Cliente: ${clientName}`, 10, 70);
+    doc.text(`Nome da Criança: ${childName}`, 10, 80);
+    doc.text(`Data de Envio: ${deliveryDate}`, 10, 90);
+    doc.text(`Tema: ${theme}`, 10, 100);
+    doc.text(`Tipo de Conta: ${accountType}`, 10, 110);
 
     // Adicionar linha para separar seção de caixas
     doc.setDrawColor(200, 0, 0);
-    doc.line(10, 75, 200, 75);
+    doc.line(10, 115, 200, 115);
 
-    // Adicionar lista de caixas
+    // Adicionar lista de caixas em uma tabela
     doc.setFontSize(14);
-    doc.text('Caixas:', 10, 85);
-    let yOffset = 95;
-    document.querySelectorAll('#selectedBoxModels p').forEach(item => {
-        doc.setFontSize(12);
-        doc.text(item.textContent, 10, yOffset);
-        yOffset += 10;
+    doc.text('Caixas:', 10, 125);
+    let yOffset = 135;
+    doc.autoTable({
+        startY: yOffset,
+        head: [['Modelo de Caixa', 'Quantidade', 'Conferido', 'OK']],
+        body: Array.from(document.querySelectorAll('#selectedBoxModels p')).map(item => [
+            item.textContent.split(': ')[0],
+            item.textContent.split(': ')[1],
+            ' ',
+            ' '
+        ]),
+        theme: 'grid',
     });
 
     // Salvar PDF com nome personalizado
