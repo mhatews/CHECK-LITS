@@ -2,6 +2,7 @@
 const boxModels = [
 
     { id: 'alcaBox', label: 'Caixas Alça' },
+    { id: 'almofadaBox', label: 'Caixas Almofada' },
     { id: 'balaBox', label: 'Caixas Bala' },
     { id: 'bilheteriaBox', label: 'Caixas Bilheteria' },
     { id: 'bisBox', label: 'Caixas Bis' },
@@ -11,6 +12,7 @@ const boxModels = [
     { id: 'cestinhaBox', label: 'Caixas Cestinha' },
     { id: 'cpipocaBox', label: 'Caixas C. Pipoca' },
     { id: 'coneBox', label: 'Caixas Cone' },
+    { id: 'coracaoBox', label: 'Caixas Coração' },
     { id: 'coneCanudo', label: 'Caixas Canudo' },
     { id: 'cuboBox', label: 'Caixas Cubo' },
     { id: 'encaixeBox', label: 'Caixas Encaixe' },
