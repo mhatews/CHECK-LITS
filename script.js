@@ -14,6 +14,7 @@ const boxModels = [
     { id: 'coneCanudo', label: 'Caixas Canudo' },
     { id: 'cuboBox', label: 'Caixas Cubo' },
     { id: 'encaixeBox', label: 'Caixas Encaixe' },
+    { id: 'fogaoBox', label: 'Caixas Fogão' },
     { id: 'GiraBox', label: 'Caixas Gira' },
     { id: 'maletaBox', label: 'Caixas Maleta' },
     { id: 'meiabalaBox', label: 'Caixas Meia Bala' },
