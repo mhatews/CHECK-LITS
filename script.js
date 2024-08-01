@@ -54,15 +54,30 @@ document.addEventListener('DOMContentLoaded', function() {
         if (quantity > 0) {
             if (existingItem) {
                 // Atualizar a quantidade do modelo existente
-                existingItem.textContent = `${selectedModel.label}: ${quantity}`;
-                existingItem.dataset.quantity = quantity;
+                existingItem.querySelector('.quantity').textContent = quantity;
             } else {
                 // Adicionar um novo modelo
                 const selectedBoxModelsContainer = document.getElementById('selectedBoxModels');
                 const item = document.createElement('p');
-                item.textContent = `${selectedModel.label}: ${quantity}`;
                 item.dataset.modelId = selectedModel.id;
-                item.dataset.quantity = quantity;
+                
+                const modelText = document.createElement('span');
+                modelText.textContent = `${selectedModel.label}: `;
+                
+                const modelQuantity = document.createElement('span');
+                modelQuantity.textContent = quantity;
+                modelQuantity.className = 'quantity';
+                
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remover';
+                removeButton.addEventListener('click', function() {
+                    selectedBoxModelsContainer.removeChild(item);
+                });
+
+                item.appendChild(modelText);
+                item.appendChild(modelQuantity);
+                item.appendChild(removeButton);
+                
                 selectedBoxModelsContainer.appendChild(item);
             }
         }
@@ -90,12 +105,17 @@ document.getElementById('checklistForm').addEventListener('submit', function(eve
     `;
 
     document.querySelectorAll('#selectedBoxModels p').forEach(item => {
-        output += `<li>${item.textContent}</li>`;
+        const label = item.querySelector('span').textContent;
+        const quantity = item.querySelector('.quantity').textContent;
+        output += `<li>${label} ${quantity}</li>`;
     });
 
     output += '</ul>';
 
     document.getElementById('output').innerHTML = output;
+
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
 });
 
 document.getElementById('downloadPDF').addEventListener('click', function() {
@@ -147,8 +167,8 @@ document.getElementById('downloadPDF').addEventListener('click', function() {
     doc.text('Caixas:', 10, 125);
     let yOffset = 135;
     const bodyData = Array.from(document.querySelectorAll('#selectedBoxModels p')).map(item => [
-        item.textContent.split(': ')[0],
-        item.textContent.split(': ')[1],
+        item.querySelector('span').textContent,
+        item.querySelector('.quantity').textContent,
         ' ',
         ' '
     ]);

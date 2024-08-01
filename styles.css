@@ -70,6 +70,22 @@ button:hover {
     padding: 10px;
     border-radius: 5px;
     margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#selectedBoxModels button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#selectedBoxModels button:hover {
+    background-color: #c82333;
 }
 
 #downloadPDF {
