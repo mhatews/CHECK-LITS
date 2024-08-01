@@ -7,6 +7,7 @@ const boxModels = [
     { id: 'bisBox', label: 'Caixas Bis' },
     { id: 'cartolaBox', label: 'Caixas Cartola' },
     { id: 'casinhaBox', label: 'Caixas Casinha' },
+    { id: 'cmesaBox', label: 'Caixas Centro de Mesa' },
     { id: 'cestinhaBox', label: 'Caixas Cestinha' },
     { id: 'cpipocaBox', label: 'Caixas C. Pipoca' },
     { id: 'coneBox', label: 'Caixas Cone' },
@@ -26,6 +27,7 @@ const boxModels = [
     { id: 'tvBox', label: 'Caixas TV' },
     { id: 'vagaoBox', label: 'Caixas Vagão' },
     { id: 'visorBox', label: 'Caixas Visor' },
+    
 ];
 
 
