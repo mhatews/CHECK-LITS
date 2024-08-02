@@ -27,6 +27,7 @@ const boxModels = [
     { id: 'sushiBox', label: 'Caixas Sushi' },
     { id: 'tendaBox', label: 'Caixas Tenda' },
     { id: 'tremBox', label: 'Caixas Trem' },
+    { id: 'tubeteBox', label: 'Caixas Tubete' },
     { id: 'tvBox', label: 'Caixas TV' },
     { id: 'vagaoBox', label: 'Caixas Vagão' },
     { id: 'visorBox', label: 'Caixas Visor' },
