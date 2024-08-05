@@ -3,6 +3,7 @@ const boxModels = [
 
     { id: 'adesivo7x10Box', label: 'Adesivos 7X10 ' },
     { id: 'adesivo10x10Box', label: 'Adesivos 10X10 ' },
+    { id: '8ladosBox', label: 'Caixas 8 Lados' },
     { id: 'alcaBox', label: 'Caixas Alça' },
     { id: 'almofadaBox', label: 'Caixas Almofada' },
     { id: 'balaBox', label: 'Caixas Bala' },
