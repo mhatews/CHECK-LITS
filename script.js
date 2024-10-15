@@ -2,6 +2,7 @@
 const boxModels = [
 
     { id: 'adesivo7x10Box', label: 'Adesivos 7X10 ' },
+    { id: 'adesivo4x4redondoox', label: 'Adesivos 4 x 4 REDONDO' },
     { id: 'adesivo5x6Box', label: 'Adesivos 5X6 ' },
     { id: 'adesivo10x10Box', label: 'Adesivos 10X10 ' },
     { id: '8ladosBox', label: 'Caixas 8 Lados' },
