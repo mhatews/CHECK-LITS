@@ -17,6 +17,7 @@ const boxModels = [
     { id: 'camisaBox', label: 'Caixas Camisa' },
     { id: 'cmesaBox', label: 'Caixas Centro de Mesa' },
     { id: 'cestinhaBox', label: 'Caixas Cestinha' },
+    { id: 'celeiroBox', label: 'Caixas Celeiro' },
     { id: 'cpipocaBox', label: 'Caixas C. Pipoca' },
     { id: 'coneBox', label: 'Caixas Cone' },
     { id: 'coracaoBox', label: 'Caixas Coração' },
